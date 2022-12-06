@@ -14,9 +14,8 @@ FROM node:alpine
 WORKDIR /usr/app
 COPY ./src/package.json ./
 COPY ./src/yarn.lock ./
-RUN npm ci --silent
-COPY --from=build /src/build ./build
-COPY --from=build /src/public ./public
-COPY --from=build /src/server.ts ./
+COPY --from=build /app/src/build ./build
+COPY --from=build /app/src/public ./public
+COPY --from=build /app/src/server.ts ./
 EXPOSE 80
 CMD ["npm", "run", "start"]
