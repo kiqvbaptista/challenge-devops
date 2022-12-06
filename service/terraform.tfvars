@@ -1,0 +1,16 @@
+aws_region              = "us-east-1"
+ecs_task_execution_role = "myECcsTaskExecutionRole"
+app_image               = "500008043123.dkr.ecr.us-east-1.amazonaws.com/click-front-ecr:latest"
+app_port                = "80"
+app_count               = "2"
+health_check_path       = "/"
+fargate_cpu             = "1024"
+fargate_memory          = "2048"
+ecs_cluster_name        = "clicksign"
+task_name               = "task-cliclsign-front"
+service_name            = "service-cliclsign-front"
+container_name          = "certisign"
+subnet_ids_pvt          = ["subnet-0fd8ec247c014b712", "subnet-0f99ae7cd3b268f6c"]
+subnet_ids_pub          = ["subnet-04cc286cb183b9772", "subnet-0c94943ce5c4799b2"]
+vpc_id                  = "vpc-06c473def3ec6bd87"
+tag_name                = "dev"
