@@ -1,13 +1,20 @@
-FROM node:latest
+# FROM node:latest
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY package.json ./
+# COPY package.json ./
 
-RUN npm install
+# RUN npm install
 
-COPY . .
+# COPY . .
+
+# EXPOSE 80
+# ENV PORT 80
+# CMD ["npm", "start", "-p", "80"]
+
+FROM nginx:latest
+
 
 EXPOSE 80
-ENV PORT 80
-CMD ["npm", "start", "-p", "80"]
+
+CMD ["nginx", "-g", "daemon off;"]
