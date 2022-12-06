@@ -9,7 +9,7 @@ env:
   ECS_SERVICE: service-cliclsign-front               
   ECS_CLUSTER: clicksign          
   ECS_TASK_DEFINITION: ./td.json   
-  CONTAINER_NAME: cliclsign
+  CONTAINER_NAME: clicksign
   
 defaults:
   run:
