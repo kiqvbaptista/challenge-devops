@@ -12,7 +12,7 @@ resource "aws_ecs_task_definition" "this" {
   memory                   = var.fargate_memory
   container_definitions = jsonencode([
     {
-      name      = "certisign"
+      name      = "clicksign"
       image     = "service-click"
       cpu       = 10
       memory    = 512
