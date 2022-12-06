@@ -1,5 +1,5 @@
 FROM node:14.21.1-alpine as build
-WORKDIR /app
+WORKDIR /src
 # ENV PATH /src/app/node_modules/.bin:$PATH
 COPY ./package.json ./
 COPY ./yarn.lock ./
