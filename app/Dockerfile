@@ -6,7 +6,7 @@ COPY ./app/src/yarn.lock ./
 COPY ./app/src ./
 
 RUN yarn install
-COPY ./app/public ./
+COPY ./app/public/index.html ./
 
 RUN yarn build
 
