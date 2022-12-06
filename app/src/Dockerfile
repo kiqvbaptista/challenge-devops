@@ -8,7 +8,7 @@ FROM node:16.13.0 as builder
 
 WORKDIR ./
 
-COPY . .
+COPY * .
 
 RUN yarn install
 
