@@ -6,6 +6,7 @@ COPY ./app/src/yarn.lock ./
 
 # RUN npm install react-scripts@3.4.1 -g --silent
 COPY ./app/src ./
+RUN yarn install
 RUN yarn build
 
 # production environment
