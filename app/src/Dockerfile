@@ -1,12 +1,12 @@
 FROM node:16.13.0 as dependencies
 
-WORKDIR ./src
+WORKDIR ./
 
 COPY package.json yarn.lock ./
 
 FROM node:16.13.0 as builder
 
-WORKDIR ./src
+WORKDIR ./
 
 COPY . .
 
@@ -18,15 +18,15 @@ RUN yarn build
 
 FROM node:16.13.0 as runner
 
-WORKDIR ./src
+WORKDIR ./
 
 ENV NODE_ENV production
 
-COPY --from=builder ./app/src/public ./public
+COPY --from=builder ./public ./public
 
-COPY --from=builder ./app/src/node_modules ./node_modules
+COPY --from=builder ./node_modules ./node_modules
 
-COPY --from=builder ./app/src/package.json ./package.json
+COPY --from=builder ./apackage.json ./package.json
 
 EXPOSE 80
 
