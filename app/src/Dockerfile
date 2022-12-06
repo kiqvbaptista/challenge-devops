@@ -2,7 +2,7 @@ FROM node:16.13.0 as dependencies
 
 WORKDIR ./
 
-COPY package.json yarn.lock ./
+COPY * ./
 
 FROM node:16.13.0 as builder
 
