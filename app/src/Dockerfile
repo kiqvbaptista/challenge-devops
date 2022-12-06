@@ -10,7 +10,7 @@ WORKDIR ./
 
 COPY . .
 
-COPY --from=dependencies ./app/src/node_modules ./node_modules
+COPY --from=dependencies ./node_modules ./node_modules
 
 RUN yarn build
 
