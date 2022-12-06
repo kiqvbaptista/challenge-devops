@@ -5,7 +5,7 @@ COPY ./app/src/package.json ./
 COPY ./app/src/yarn.lock ./
 
 # RUN npm install react-scripts@3.4.1 -g --silent
-COPY ./src ./
+COPY ./app/src ./
 RUN npm run build
 
 # production environment
