@@ -8,9 +8,8 @@ env:
   AWS_REGION: us-east-1                  
   ECR_REPOSITORY: click-front-ecr        
   ECS_SERVICE: service-cliclsign-front               
-  ECS_CLUSTER: clicksign-dev              
-  ECS_TASK_DEFINITION: ./templates/taskdefinitions.json
-  CONTAINER_NAME: cliclsign-front
+  ECS_CLUSTER: clicksign             
+  CONTAINER_NAME: cliclsign
   
 defaults:
   run:
@@ -56,7 +55,6 @@ jobs:
           id: task-def
           uses: aws-actions/amazon-ecs-render-task-definition@v1
           with:
-              task-definition: ${{ env.ECS_TASK_DEFINITION }}
               container-name: ${{ env.CONTAINER_NAME }}
               image: ${{ steps.build-image.outputs.image }}
         - name: Deploy Amazon ECS task definition
