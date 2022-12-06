@@ -47,7 +47,7 @@ jobs:
               ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
               IMAGE_TAG: ${{ steps.tag-number.outputs.tag }}
           run: |
-              docker build --file ./app/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+              docker build --file ./Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
               docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
               echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
         - name: Fill in the new image ID in the Amazon ECS task definition
