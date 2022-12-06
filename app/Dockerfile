@@ -3,10 +3,8 @@ WORKDIR /app
 # ENV PATH /src/app/node_modules/.bin:$PATH
 COPY ./app/src/package.json ./
 COPY ./app/src/yarn.lock ./
+COPY ./app/public ./
 COPY ./app/src ./
-
-RUN yarn install
-COPY ./app/public/index.html ./
 
 RUN yarn build
 
