@@ -4,7 +4,7 @@ WORKDIR /app
 COPY ./app/src/package.json ./
 COPY ./app/src/yarn.lock ./
 COPY ./app/src ./
-
+RUN npm install
 RUN npm run build
 
 # production environment
