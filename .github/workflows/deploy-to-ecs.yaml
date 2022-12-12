@@ -10,7 +10,7 @@ env:
   ECS_CLUSTER: clicksign          
   ECS_TASK_DEFINITION: ./td.json   
   CONTAINER_NAME: clicksign
-  
+  ##
 defaults:
   run:
     shell: bash
